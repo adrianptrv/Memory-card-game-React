@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Grid from "./Grid.jsx"
+import "../styles/SearchScreen.scss"
 
 
 function SearchScreen() {
@@ -13,10 +14,11 @@ function SearchScreen() {
     return (
         <>
             {pageNum ?
-                <div>
+                <div className="searchWrapper">
                     <h1>Please enter a category with which you would like to play.</h1>
                     <p>e.g. Nature, Cars, Pets...</p>
                     <input value={inputWord} onChange={(e) => {setInputWord(e.target.value) }} type="text"></input>
+                    <br></br>
                     <button onClick={handlePageChange}>Start game</button>
                 </div>
                 : <Grid wordSearch={inputWord} />}

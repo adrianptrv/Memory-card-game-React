@@ -78,10 +78,11 @@ function Grid({wordSearch}) {
 
   return (
     <>
+    <div className="gridWrapper">
       {blocks.map((child, i) => <div key={i} value={child} onClick={() => Comparer(child)} style={{ border: "3px solid black" }}>
-        <h1><img width={100} height={100} src={child}></img></h1>
+        <img width={100} height={100} src={child}></img>
       </div>)}
-      <button onClick={Shuffle}>Click</button>
+      </div>
       <button onClick={NewGame}>New game</button>
       <p>Score: {score}</p>
 
