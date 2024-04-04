@@ -19,7 +19,7 @@ function SearchScreen() {
                     <p>e.g. Nature, Cars, Pets...</p>
                     <input value={inputWord} onChange={(e) => {setInputWord(e.target.value) }} type="text"></input>
                     <br></br>
-                    <button onClick={handlePageChange}>Start game</button>
+                    <button className="btn" onClick={handlePageChange}>Start game</button>
                 </div>
                 : <Grid wordSearch={inputWord} />}
         </>

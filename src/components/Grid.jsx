@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../styles/Grid.scss"
 
 let firstArr = []
 
@@ -6,7 +7,7 @@ function Grid({wordSearch}) {
 
 
   useEffect(() => {
-    const key = fetch("https://api.unsplash.com/search/photos?query=" + wordSearch + "&client_id=nl2Ap7tFASL8YLZndqojgkL4o2wwGE5OqRCWR6b853Y")
+    fetch("https://api.unsplash.com/search/photos?query=" + wordSearch + "&client_id=nl2Ap7tFASL8YLZndqojgkL4o2wwGE5OqRCWR6b853Y")
       .then((response) => response.json())
       .then((data) => {
         let resultJson = data.results
@@ -18,9 +19,7 @@ function Grid({wordSearch}) {
         firstArr = arr1;
         console.log(arr1)
       })
-    return () => {
-      clearInterval(key);
-    };
+
   }, [])
 
   //Array with the images links
@@ -79,11 +78,11 @@ function Grid({wordSearch}) {
   return (
     <>
     <div className="gridWrapper">
-      {blocks.map((child, i) => <div key={i} value={child} onClick={() => Comparer(child)} style={{ border: "3px solid black" }}>
-        <img width={100} height={100} src={child}></img>
+      {blocks.map((child, i) => <div className="gridItem" key={i} value={child} onClick={() => Comparer(child)}>
+        <img className="gridImg" src={child}></img>
       </div>)}
       </div>
-      <button onClick={NewGame}>New game</button>
+      <button className="btn" onClick={NewGame}>New game</button>
       <p>Score: {score}</p>
 
     </>

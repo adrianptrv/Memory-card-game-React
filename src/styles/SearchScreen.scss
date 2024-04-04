@@ -28,8 +28,10 @@ body {
         border: 1px solid #b3b3b378;
         border-radius: 5px;
     }
+    
+}
 
-    button{
+.btn {
         margin-top: 15px;
         border: 1px solid #8080802e;
         border-radius: 5px;
@@ -40,8 +42,8 @@ body {
         background-color: #f9f9f9;
         cursor: pointer;
         transition: border-color 0.25s;
-      }
-      button:hover {
+     
+        &:hover {
         border-color: #646cff;
       }
     
