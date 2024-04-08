@@ -1,25 +1,90 @@
+.btn.new {
+    margin: 0 0 40px 10px;
+
+    @media only screen and (max-width: 1024px) {
+        margin: 0 0 40px 0;
+    }
+}
+
+.scores {
+    float: right;
+    margin: -30px 20px 0 0;
+
+    @media only screen and (max-width: 1024px) {
+        margin: -30px 10px 0 0;
+    }
+}
+
 .gridWrapper {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     row-gap: 25px;
     column-gap: 25px;
 
-    
-    .gridItem { 
+    @media only screen and (max-width: 550px) {
+        grid-template-columns: auto auto;
+        row-gap: 2em;
+        column-gap: 2em;
+    }
+
+    @media only screen and (min-width: 551px) and (max-width: 750px) {
+        grid-template-columns: auto auto auto;
+    }
+
+    @media only screen and (min-width: 751px) and (max-width: 950px) {
+        grid-template-columns: auto auto auto auto;
+    }
+
+    .gridItem {
         border: 2px solid #9f9f9f8c;
-        width: 12em;
-        height: 12em;
+        width: 8em;
+        height: 8em;
         border-radius: 10px;
         transition: border-color 0.8s;
         overflow: hidden;
+
         &:hover {
             cursor: pointer;
-            border-color:  #646cff;
-          }
+            border-color: #646cff;
+        }
     }
 
-    .gridImg{
+    .gridImg {
         height: inherit;
         width: inherit;
+    }
+}
+
+.modalScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #ffffffde;
+
+    .btnWrapper {
+        width: 17.9em;
+        margin: auto;
+        margin-top: 9%;
+        @media only screen and (max-width: 1024px) {
+           margin-top: 295px;
+        }
+
+        h1 {
+            font-size: 4em;
+        }
+
+        button {
+            border: 2px solid black;
+            &:hover {
+                border-color: #646cff;
+                cursor: pointer;
+            }
+        }
+
+        button:nth-of-type(2) {
+            float: right;
+        }
     }
 }

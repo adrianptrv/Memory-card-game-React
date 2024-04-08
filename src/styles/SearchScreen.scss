@@ -17,7 +17,11 @@ body {
     margin: auto;
     margin-top: -15em;
 
-    h1{
+    @media only screen and (max-width: 1024px) {
+        width: 80%;
+    }
+
+    h1 {
         margin-bottom: 0px;
     }
 
@@ -28,23 +32,23 @@ body {
         border: 1px solid #b3b3b378;
         border-radius: 5px;
     }
-    
+
 }
 
 .btn {
-        margin-top: 15px;
-        border: 1px solid #8080802e;
-        border-radius: 5px;
-        padding: 0.6em 1.2em;
-        font-size: 1em;
-        font-weight: 500;
-        font-family: inherit;
-        background-color: #f9f9f9;
-        cursor: pointer;
-        transition: border-color 0.25s;
-     
-        &:hover {
+    margin-top: 15px;
+    border: 1px solid #8080802e;
+    border-radius: 5px;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: border-color 0.25s;
+
+    &:hover {
         border-color: #646cff;
-      }
-    
+    }
+
 }
